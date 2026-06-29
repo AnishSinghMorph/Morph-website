@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm --version)",
+      "Read(//Users/macbook/Desktop/**)",
+      "Bash(npx --yes create-next-app@latest /Users/macbook/Desktop/morph-scaffold --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --turbopack --use-npm --skip-install --yes)",
+      "Bash(rsync -a --exclude '.git' --exclude 'CLAUDE.md' --exclude 'AGENTS.md' --exclude 'README.md' /Users/macbook/Desktop/morph-scaffold/ /Users/macbook/Desktop/morph-website/)",
+      "Bash(rm -rf /Users/macbook/Desktop/morph-scaffold)",
+      "Bash(rm -f public/next.svg public/vercel.svg public/file.svg public/globe.svg public/window.svg)",
+      "Bash(rm -f src/app/globals.css)",
+      "Bash(mkdir -p public/models public/images public/og public/draco public/icons)",
+      "Bash(mv WebsiteExperienceCenter2.glb public/models/)",
+      "Bash(mkdir -p src/styles src/components src/lib src/content)",
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "mcp__plugin_figma_figma__get_metadata",
+      "mcp__plugin_figma_figma__get_screenshot",
+      "mcp__plugin_figma_figma__get_design_context",
+      "Read(//private/tmp/**)",
+      "Bash(curl -s -o morph_home_full.png \"https://www.figma.com/api/mcp/asset/9b17d3aa-a37e-43c7-af3c-572226d559ae\")",
+      "mcp__plugin_figma_figma__get_variable_defs",
+      "mcp__plugin_figma_figma__download_assets",
+      "Bash(curl -s -o public/images/home-intro-feature.png \"https://www.figma.com/api/mcp/asset/ec54eb92-c834-4e19-9f9c-e9ae34a30a07\")",
+      "Bash(curl -s -o public/images/home-gallery-feature.png \"https://www.figma.com/api/mcp/asset/e7b657c2-6b4d-4cfd-ba96-ec32e477c0a9\")",
+      "Bash(curl -s -o public/icons/morph-wordmark.svg \"https://www.figma.com/api/mcp/asset/73eddab2-4721-47b8-8699-55e4e03520cd\")",
+      "Bash(file public/images/*.png public/icons/*.svg)"
+    ]
+  }
+}

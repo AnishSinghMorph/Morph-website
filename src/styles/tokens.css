@@ -1,0 +1,65 @@
+/* ---------------------------------------------------------------------------
+ * Morph design tokens — DARK MODE ONLY (no light theme, no toggle).
+ * Pulled from the Figma home frame (190-33). Source of truth: STYLE.md.
+ *
+ * Tailwind v4: `@theme` emits these as CSS variables on :root AND generates
+ * utilities (e.g. `bg-bg`, `text-fg`, `text-accent`, `font-display`,
+ * `text-display`). Inner-page frames may add tokens — extend, don't hardcode.
+ * ------------------------------------------------------------------------- */
+
+@theme {
+  /* ---- Color (Figma 190-33) -------------------------------------------- */
+  --color-bg: #000000; /* page background (hero + footer) */
+  --color-surface: #0c0604; /* warm gradient mid-stop / panels */
+  --color-fg: #ffffff; /* primary text */
+  --color-muted: #86746a; /* warm taupe — copyright / fine print */
+  --color-accent: #ff8800; /* brand accent ("Color mrp"): the ".", NEXT GEN */
+  --color-on-accent: #1a1a1d; /* dark text on light pills (social links) */
+  --color-border: #1a1a1d; /* hairlines / pill outlines */
+  --color-ring: #ff8800; /* focus ring = accent */
+
+  /* ---- Type ------------------------------------------------------------- */
+  /* Families are mapped to the next/font variables in globals.css. */
+  --text-display: clamp(2.5rem, 5.2vw, 6rem); /* 96px @1920 */
+  --text-display--line-height: 1.02;
+  --text-display-sm: clamp(2rem, 3.4vw, 4rem); /* 64px @1920 — "NEXT GEN" subhead */
+  --text-display-sm--line-height: 1.1;
+  --text-body-lg: clamp(1.375rem, 1.7vw, 2rem); /* 32px @1920 */
+  --text-body-lg--line-height: 1.32;
+  --text-body-emph: clamp(1.5rem, 1.85vw, 2.1875rem); /* 35px @1920 */
+  --text-body-emph--line-height: 1.25;
+  --text-caption: 1rem; /* 16px */
+  --text-label: 0.9375rem; /* 15px */
+
+  /* ---- Corner radii ----------------------------------------------------- */
+  --radius-sm: 8px; /* TODO Figma: confirm per-component */
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+
+  /* ---- Custom easing utilities (ease-smooth / ease-inout) --------------- */
+  --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-inout: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+:root {
+  /* ---- Warm radial backdrop behind the intro (Figma Rectangle 4) -------- */
+  --grad-intro: radial-gradient(
+    120% 90% at 75% 80%,
+    #170c07 0%,
+    #0c0604 51%,
+    #000000 100%
+  );
+
+  /* ---- Motion tokens for GSAP / custom CSS (STYLE.md §7) ---------------- */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1); /* primary */
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 200ms;
+  --dur-base: 600ms;
+  --dur-slow: 900ms;
+
+  /* ---- Layout (Figma: 1920 frame, 128px side margins) ------------------ */
+  --container-max: 1664px; /* 1920 − 2×128 content width */
+  --margin-page: clamp(1.25rem, 6.67vw, 8rem); /* 128px @1920, fluid */
+  --gutter: clamp(1rem, 1.67vw, 2rem); /* ~32px @1920 */
+}

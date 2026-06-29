@@ -1,0 +1,59 @@
+@import "tailwindcss";
+@import "./tokens.css";
+
+/* ---------------------------------------------------------------------------
+ * Type tokens → self-hosted next/font variables (set on <html> in layout.tsx).
+ * Display + small UI = Exo. Long-form body = Fellix (placeholder: Manrope until
+ * the licensed Fellix file is supplied). `@theme inline` keeps these as live var
+ * references. Generated utilities: `font-display`, `font-body`, `font-sans`.
+ * ------------------------------------------------------------------------- */
+@theme inline {
+  --font-display: var(--font-exo), system-ui, sans-serif;
+  --font-body: var(--font-fellix), system-ui, sans-serif; /* TODO: licensed Fellix */
+  --font-sans: var(--font-exo), system-ui, sans-serif;
+}
+
+@layer base {
+  :root {
+    color-scheme: dark; /* DARK MODE ONLY */
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-display); /* Exo is the global default (per Figma) */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Visible keyboard focus everywhere (a11y) */
+  :focus-visible {
+    outline: 2px solid var(--color-ring);
+    outline-offset: 2px;
+  }
+
+  /* Global reduced-motion guard. Scroll-scrub + ripple are additionally
+     disabled in JS (Phase 2) — this covers CSS transitions/animations. */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  /* Warm radial backdrop behind the intro (Figma Rectangle 4). */
+  .bg-intro {
+    background-image: var(--grad-intro);
+  }
+}
