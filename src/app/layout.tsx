@@ -5,6 +5,7 @@ import { siteConfig, defaultTitle } from "@/content/site";
 import { organizationJsonLd, websiteJsonLd } from "@/lib/jsonld";
 import { JsonLd } from "@/components/JsonLd";
 import { SiteFooter } from "@/components/SiteFooter";
+import { SmoothScroll } from "@/lib/lenis";
 
 /** Display + UI typeface (Figma `190-33`). Self-hosted, no layout shift. */
 const fontExo = Exo({
@@ -73,10 +74,10 @@ export default function RootLayout({
     >
       <body className="flex min-h-full flex-col bg-bg text-fg">
         <JsonLd data={[organizationJsonLd(), websiteJsonLd()]} />
-        {/* No top nav: the Figma home has none. Navigation arrives with the
-            scroll-driven 3D experience (Phase 2) + footer links. */}
-        <main className="flex-1">{children}</main>
-        <SiteFooter />
+        <SmoothScroll>
+          <main className="flex-1">{children}</main>
+          <SiteFooter />
+        </SmoothScroll>
       </body>
     </html>
   );

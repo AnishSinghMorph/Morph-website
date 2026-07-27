@@ -1,14 +1,26 @@
+import SplashCursor from "@/components/effects/SplashCursor";
+import { Hero } from "@/components/home/Hero";
+import { Intro } from "@/components/home/Intro";
+import { FeatureImage } from "@/components/home/FeatureImage";
+import { PortalNav } from "@/components/home/PortalNav";
+import { Gallery } from "@/components/home/Gallery";
+import { PagesNav } from "@/components/home/PagesNav";
+
 /**
- * Home (/) — built in Phase 3 EXACTLY from Figma node 190-33.
- * The earlier scaffold copy has been removed (no old-site references).
- * Sections, copy, layout and assets are derived solely from the Figma frame
- * once it is pulled and confirmed.
+ * Home (/) — Figma 190-33: hero (3D scrub) → intro/"who we are" → feature image
+ * → our work → gallery. Splash Cursor (reactbits) fluid overlay on top. Footer
+ * in the root layout. Scroll-narrative pages navigator is layered next.
  */
 export default function HomePage() {
   return (
-    <section className="mx-auto max-w-[var(--container-max)] px-[var(--margin-page)] py-24">
-      {/* TODO: build home from Figma node 190-33 (pending pull + confirmation). */}
-      <p className="text-muted">Home — building from Figma.</p>
-    </section>
+    <>
+      <SplashCursor />
+      <Hero />
+      <Intro />
+      <FeatureImage />
+      <PortalNav />
+      <Gallery />
+      <PagesNav />
+    </>
   );
 }

@@ -57,3 +57,25 @@
     background-image: var(--grad-intro);
   }
 }
+
+/* FlowingMenu marquee (reactbits) — used via animate-[mb-marquee_…]. */
+@keyframes mb-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Lenis smooth scroll base styles. */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}

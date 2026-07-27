@@ -23,7 +23,11 @@
       "Bash(curl -s -o public/images/home-intro-feature.png \"https://www.figma.com/api/mcp/asset/ec54eb92-c834-4e19-9f9c-e9ae34a30a07\")",
       "Bash(curl -s -o public/images/home-gallery-feature.png \"https://www.figma.com/api/mcp/asset/e7b657c2-6b4d-4cfd-ba96-ec32e477c0a9\")",
       "Bash(curl -s -o public/icons/morph-wordmark.svg \"https://www.figma.com/api/mcp/asset/73eddab2-4721-47b8-8699-55e4e03520cd\")",
-      "Bash(file public/images/*.png public/icons/*.svg)"
+      "Bash(file public/images/*.png public/icons/*.svg)",
+      "Bash(rm -rf .next)",
+      "mcp__codebase-memory-mcp__index_repository",
+      "mcp__magic__21st_magic_component_builder",
+      "WebFetch(domain:reactbits.dev)"
     ]
   }
 }
